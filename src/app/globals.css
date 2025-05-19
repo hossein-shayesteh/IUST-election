@@ -122,3 +122,99 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  color: rgb(var(--foreground-rgb));
+  background: white;
+}
+
+/* انیمیشن‌های اشکال متحرک */
+@keyframes float-diagonal {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float-diagonal-reverse {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-100px, -100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float-vertical {
+  0% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(100px) rotate(12deg);
+  }
+  100% {
+    transform: translateY(0) rotate(12deg);
+  }
+}
+
+@keyframes float-vertical-delay {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-vertical-slow {
+  0% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(60px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}
+
+.animate-float-diagonal {
+  animation: float-diagonal 15s ease-in-out infinite;
+}
+
+.animate-float-diagonal-reverse {
+  animation: float-diagonal-reverse 18s ease-in-out infinite;
+}
+
+.animate-float-vertical {
+  animation: float-vertical 10s ease-in-out infinite;
+}
+
+.animate-float-vertical-delay {
+  animation: float-vertical-delay 12s ease-in-out infinite;
+}
+
+.animate-float-vertical-slow {
+  animation: float-vertical-slow 14s ease-in-out infinite;
+}

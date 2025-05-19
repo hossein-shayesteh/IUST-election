@@ -23,20 +23,8 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Statistics */}
-      <section className="bg-blue-50 py-12">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
-            <StatCard number={12} label="Faculties" />
-            <StatCard number={48} label="Candidates" />
-            <StatCard number={5240} label="Eligible Voters" />
-            <StatCard number={7} label="Days to Vote" />
-          </div>
-        </div>
-      </section>
-
       {/* Election Information */}
-      <section className="py-16">
+      <section className="border-0 py-16">
         <div className="container mx-auto px-4 text-center md:px-6">
           <h2 className="mb-4 text-3xl font-bold">Election Information</h2>
           <p className="mx-auto mb-12 max-w-3xl text-gray-600">
