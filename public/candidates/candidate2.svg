@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#e2e8f0"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="70" r="40" fill="#94a3b8"/>
+  
+  <!-- Body -->
+  <path d="M100 110 L100 180 Q60 180 60 140 L60 110 Q80 120 100 110 Q120 120 140 110 L140 140 Q140 180 100 180 Z" fill="#64748b"/>
+  
+  <!-- Face -->
+  <circle cx="85" cy="65" r="5" fill="#334155"/>
+  <circle cx="115" cy="65" r="5" fill="#334155"/>
+  <path d="M85 85 Q100 95 115 85" stroke="#334155" stroke-width="2" fill="none"/>
+  
+  <!-- Hijab -->
+  <path d="M60 70 Q60 20 100 20 Q140 20 140 70 Q140 120 100 120 Q60 120 60 70 Z" fill="#475569" stroke="#334155" stroke-width="2"/>
+  <path d="M70 110 Q100 120 130 110 L130 160 Q100 170 70 160 Z" fill="#475569" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Face cutout -->
+  <ellipse cx="100" cy="70" rx="30" ry="35" fill="#94a3b8"/>
+</svg>
