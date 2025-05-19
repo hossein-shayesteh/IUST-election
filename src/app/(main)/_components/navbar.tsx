@@ -11,13 +11,14 @@ export const navLinks = [
     label: "خانه",
     href: "/",
   },
-  {
-    label: "نامزدها",
-    href: "#candidates",
-  },
+
   {
     label: "زمان‌بندی",
     href: "#schedule",
+  },
+  {
+    label: "نامزدها",
+    href: "#candidates",
   },
   {
     label: "سوالات متداول",
@@ -72,4 +73,5 @@ const Navbar = ({ setOpenMobileSidebar }: NavbarProps) => {
     </header>
   );
 };
+
 export default Navbar;

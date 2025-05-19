@@ -2,116 +2,127 @@ export interface Candidate {
   id: string;
   name: string;
   image: string;
-  faculty: string;
-  major: string;
+  faculty: Faculties;
+  reconciliation: string;
   academicYear: number;
   platform: string;
+  tags?: string[];
 }
 
-export const faculties = [
-  "Engineering",
-  "Science",
-  "Humanities",
-  "Medicine",
-  "Business",
-];
+export enum Faculties {
+  CivilEngineering = "مهندسی عمران",
+  MechanicalEngineering = "مهندسی مکانیک",
+  ChemicalEngineering = "مهندسی شیمی",
+  BiomedicalEngineering = "مهندسی پزشکی",
+  ElectricalEngineering = "مهندسی برق",
+}
 
-export const candidates: Candidate[] = [
+export const AllCandidates: Candidate[] = [
   {
     id: "1",
     name: "علی محمدی",
-    image: "/candidates/candidate1.svg",
-    faculty: "Engineering",
-    major: "Computer Engineering",
+    image: "/profile.jpg",
+    faculty: Faculties.ElectricalEngineering,
+    reconciliation: "Computer Engineering",
     academicYear: 3,
     platform:
       "ارتقای کیفیت آموزشی و برگزاری کارگاه‌های تخصصی برای دانشجویان مهندسی کامپیوتر",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "2",
     name: "سارا احمدی",
-    image: "/candidates/candidate2.svg",
-    faculty: "Science",
-    major: "Physics",
+    image: "/profile.jpg",
+    faculty: Faculties.MechanicalEngineering,
+    reconciliation: "Physics",
     academicYear: 2,
     platform:
       "توسعه فعالیت‌های پژوهشی و ایجاد ارتباط با صنعت برای دانشجویان فیزیک",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "3",
     name: "محمد رضایی",
-    image: "/candidates/candidate3.svg",
-    faculty: "Humanities",
-    major: "Psychology",
+    image: "/profile.jpg",
+    faculty: Faculties.ChemicalEngineering,
+    reconciliation: "Psychology",
     academicYear: 4,
     platform:
       "برگزاری سمینارهای روانشناسی کاربردی و ارائه خدمات مشاوره به دانشجویان",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "4",
     name: "فاطمه حسینی",
-    image: "/candidates/candidate4.svg",
-    faculty: "Medicine",
-    major: "General Medicine",
+    image: "/profile.jpg",
+    faculty: Faculties.BiomedicalEngineering,
+    reconciliation: "General Medicine",
     academicYear: 5,
     platform:
       "ارتقای سطح آموزش بالینی و ایجاد فرصت‌های کارآموزی برای دانشجویان پزشکی",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "5",
     name: "امیر کریمی",
-    image: "/candidates/candidate5.svg",
-    faculty: "Business",
-    major: "Business Management",
+    image: "/profile.jpg",
+    faculty: Faculties.ElectricalEngineering,
+    reconciliation: "Business Management",
     academicYear: 3,
     platform:
       "برگزاری دوره‌های کارآفرینی و ایجاد ارتباط با شرکت‌های موفق برای کارآموزی",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "6",
     name: "زهرا نجفی",
-    image: "/candidates/candidate6.svg",
-    faculty: "Engineering",
-    major: "Electrical Engineering",
+    image: "/profile.jpg",
+    faculty: Faculties.CivilEngineering,
+    reconciliation: "Electrical Engineering",
     academicYear: 2,
     platform:
       "توسعه پروژه‌های عملی و برگزاری مسابقات مهندسی برق برای افزایش مهارت‌های عملی",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "7",
     name: "حسین مرادی",
-    image: "/candidates/candidate7.svg",
-    faculty: "Science",
-    major: "Chemistry",
+    image: "/profile.jpg",
+    faculty: Faculties.MechanicalEngineering,
+    reconciliation: "Chemistry",
     academicYear: 4,
     platform:
       "تجهیز آزمایشگاه‌های شیمی و برگزاری کارگاه‌های آزمایشگاهی پیشرفته",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "8",
     name: "مریم صادقی",
-    image: "/candidates/candidate8.svg",
-    faculty: "Humanities",
-    major: "Literature",
+    image: "/profile.jpg",
+    faculty: Faculties.ChemicalEngineering,
+    reconciliation: "Literature",
     academicYear: 3,
     platform: "برگزاری جلسات نقد ادبی و انتشار مجله دانشجویی ادبیات",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "9",
     name: "رضا جعفری",
-    image: "/candidates/candidate9.svg",
-    faculty: "Medicine",
-    major: "Dentistry",
+    image: "/profile.jpg",
+    faculty: Faculties.BiomedicalEngineering,
+    reconciliation: "Dentistry",
     academicYear: 4,
     platform: "ارتقای آموزش عملی دندانپزشکی و برگزاری دوره‌های تخصصی",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
   {
     id: "10",
     name: "نیلوفر محسنی",
-    image: "/candidates/candidate10.svg",
-    faculty: "Business",
-    major: "Economics",
+    image: "/profile.jpg",
+    faculty: Faculties.ElectricalEngineering,
+    reconciliation: "Economics",
     academicYear: 2,
     platform: "برگزاری سمینارهای اقتصادی و دعوت از اساتید برجسته برای سخنرانی",
+    tags: ["پژوهش", "نوآوری", "دسترسی‌پذیری"],
   },
 ];
