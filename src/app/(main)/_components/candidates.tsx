@@ -27,7 +27,7 @@ const Candidates = () => {
   }, [selectedDepartment]);
 
   return (
-    <section className="bg-white py-16" id="candidates">
+    <section className="bg-gray-50 py-16" id="candidates">
       <div className="container mx-auto px-4 text-center md:px-6">
         <div className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-800">
           آشنایی با نامزدها

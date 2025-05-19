@@ -43,7 +43,7 @@ const Navbar = ({ setOpenMobileSidebar }: NavbarProps) => {
           <Menu />
         </Button>
         <div className="flex items-center gap-2">
-          <Link href="/public" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Button
               size={"icon"}
               className={
