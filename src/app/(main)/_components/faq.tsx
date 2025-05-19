@@ -1,5 +1,3 @@
-import { ChevronDown } from "lucide-react";
-
 import {
   Accordion,
   AccordionContent,
