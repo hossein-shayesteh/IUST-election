@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Calendar, UsersRound } from "lucide-react";
+import { ToPersianNumber } from "topersiannumber";
 
 import { Button } from "@/src/components/ui/button";
 
@@ -43,7 +44,7 @@ const HeroSection = () => {
           className="w-full"
         >
           <path
-            fill="#ffffff"
+            fill="#f9fafb"
             fillOpacity="1"
             d="M0,224L1440,288L1440,320L0,320Z"
           ></path>
@@ -87,7 +88,7 @@ const HeroSection = () => {
           </div>
 
           {/* Ballot box image */}
-          <div className="relative h-72 w-72 md:h-80 md:w-80"></div>
+          <div className="size-72 md:size-80" />
         </div>
 
         {/* Statistics */}
@@ -114,7 +115,7 @@ interface StatisticsItemsProps {
 const StatisticsItems = ({ number, label }: StatisticsItemsProps) => {
   return (
     <div className="rounded-lg bg-blue-500/50 p-6 text-center backdrop-blur-sm">
-      <h3 className="mb-1 text-4xl font-bold">{number}</h3>
+      <h3 className="mb-1 text-4xl font-bold">{ToPersianNumber(number)}</h3>
       <p className="text-sm">{label}</p>
     </div>
   );

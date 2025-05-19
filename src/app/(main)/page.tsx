@@ -15,7 +15,9 @@ import { Button } from "@/src/components/ui/button";
 import { Card } from "@/src/components/ui/card";
 import { Separator } from "@/src/components/ui/separator";
 
+import ElectionInformation from "@/src/app/(main)/_components/election-information";
 import HeroSection from "@/src/app/(main)/_components/hero-section";
+import Timeline from "@/src/app/(main)/_components/timeline";
 
 export default function Home() {
   return (
@@ -24,96 +26,10 @@ export default function Home() {
       <HeroSection />
 
       {/* Election Information */}
-      <section className="border-0 py-16">
-        <div className="container mx-auto px-4 text-center md:px-6">
-          <h2 className="mb-4 text-3xl font-bold">Election Information</h2>
-          <p className="mx-auto mb-12 max-w-3xl text-gray-600">
-            Learn about the election process, voting procedures, and how your
-            participation shapes the future of our university community.
-          </p>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <InfoCard
-              icon="/icons/vote.svg"
-              title="How to Vote"
-              description="Voting is available online through the university portal. Use your student credentials to access the secure voting platform."
-              linkText="Learn more"
-              linkHref="/how-to-vote"
-            />
-            <InfoCard
-              icon="/icons/eligibility.svg"
-              title="Eligibility"
-              description="All registered students with active status for the current academic year are eligible to vote in their respective faculty elections."
-              linkText="Check eligibility"
-              linkHref="/eligibility"
-            />
-            <InfoCard
-              icon="/icons/rules.svg"
-              title="Election Rules"
-              description="Our elections follow strict guidelines to ensure fairness and transparency. All candidates and voters must adhere to the university code of conduct."
-              linkText="View rules"
-              linkHref="/rules"
-            />
-          </div>
-        </div>
-      </section>
+      <ElectionInformation />
 
       {/* Election Timeline */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 text-center md:px-6">
-          <div className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-800">
-            IMPORTANT DATES
-          </div>
-          <h2 className="mb-4 text-3xl font-bold">Election Timeline</h2>
-          <p className="mx-auto mb-12 max-w-3xl text-gray-600">
-            Mark your calendar with these important election milestones.
-          </p>
-
-          <div className="relative mx-auto max-w-3xl">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-blue-200"></div>
-
-            <div className="relative space-y-24">
-              <TimelineItem
-                date="May 1-10, 2023"
-                title="Nomination Period"
-                description="Candidates submit their applications and platforms for review."
-                position="left"
-                icon="N"
-              />
-              <TimelineItem
-                date="May 11-20, 2023"
-                title="Campaign Period"
-                description="Candidates present their platforms and engage with the student body."
-                position="right"
-                icon="C"
-              />
-              <TimelineItem
-                date="May 21, 2023"
-                title="Debate Day"
-                description="Candidates participate in public debates to discuss their visions and plans."
-                position="left"
-                icon="D"
-              />
-              <TimelineItem
-                date="May 22-26, 2023"
-                title="Voting Period"
-                description="Students cast their votes for their preferred candidates through the online portal."
-                position="right"
-                icon="V"
-                highlight
-              />
-              <TimelineItem
-                date="May 28, 2023"
-                title="Results Announcement"
-                description="Official election results are announced and published."
-                position="left"
-                icon="R"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Timeline />
 
       {/* Candidates Section */}
       <section className="py-16">
@@ -321,83 +237,7 @@ const StatCard = ({ number, label }: { number: number; label: string }) => {
   );
 };
 
-// Component for information cards
-function InfoCard({
-  icon,
-  title,
-  description,
-  linkText,
-  linkHref,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-  linkText: string;
-  linkHref: string;
-}) {
-  return (
-    <div className="rounded-lg bg-white p-6 text-left shadow-sm">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-        <Image src={icon} alt={title} width={24} height={24} />
-      </div>
-      <h3 className="mb-2 text-xl font-bold">{title}</h3>
-      <p className="mb-4 text-gray-600">{description}</p>
-      <Link
-        href={linkHref}
-        className="flex items-center gap-1 font-medium text-blue-600 hover:underline"
-      >
-        {linkText} →
-      </Link>
-    </div>
-  );
-}
-
 // Component for timeline items
-function TimelineItem({
-  date,
-  title,
-  description,
-  position,
-  icon,
-  highlight = false,
-}: {
-  date: string;
-  title: string;
-  description: string;
-  position: "left" | "right";
-  icon: string;
-  highlight?: boolean;
-}) {
-  return (
-    <div
-      className={`flex items-center ${position === "left" ? "flex-row-reverse" : "flex-row"}`}
-    >
-      <div
-        className={`w-5/12 ${position === "left" ? "pr-8 text-right" : "pl-8 text-left"}`}
-      >
-        <div
-          className={`rounded-lg p-4 shadow-sm ${highlight ? "border border-red-200 bg-red-50" : "bg-white"}`}
-        >
-          <p
-            className={`mb-1 text-sm font-medium ${highlight ? "text-red-600" : "text-gray-500"}`}
-          >
-            {date}
-          </p>
-          <h3 className="mb-2 text-lg font-bold">{title}</h3>
-          <p className="text-gray-600">{description}</p>
-        </div>
-      </div>
-      <div className="flex w-2/12 justify-center">
-        <div
-          className={`z-10 flex h-10 w-10 items-center justify-center rounded-full ${highlight ? "bg-red-500" : "bg-blue-500"} font-bold text-white`}
-        >
-          {icon}
-        </div>
-      </div>
-      <div className="w-5/12"></div>
-    </div>
-  );
-}
 
 // Component for candidate cards
 function CandidateCard({

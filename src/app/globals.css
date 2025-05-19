@@ -138,7 +138,6 @@ body {
   background: white;
 }
 
-/* انیمیشن‌های اشکال متحرک */
 @keyframes float-diagonal {
   0% {
     transform: translate(0, 0);
