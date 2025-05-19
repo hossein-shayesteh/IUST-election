@@ -1,55 +1,107 @@
+import React from "react";
+
+import { Award, Calendar, FilePen, Vote } from "lucide-react";
+
+import { Badge } from "@/src/components/ui/badge";
+
 const Timeline = () => {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-white py-16" id={"schedule"}>
       <div className="container mx-auto px-4 text-center md:px-6">
         <div className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-800">
-          IMPORTANT DATES
+          تاریخ‌های مهم
         </div>
-        <h2 className="mb-4 text-3xl font-bold">Election Timeline</h2>
+        <h2 className="mb-4 text-3xl font-bold">زمان‌بندی انتخابات</h2>
         <p className="mx-auto mb-12 max-w-3xl text-gray-600">
-          Mark your calendar with these important election milestones.
+          تقویم خود را با این مراحل مهم انتخابات علامت‌گذاری کنید.
         </p>
 
-        <div className="relative mx-auto max-w-3xl">
+        {/* Desktop Timeline (hidden on mobile) */}
+        <div className="relative mx-auto hidden max-w-4xl md:block">
           {/* Timeline Line */}
           <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 transform bg-blue-200"></div>
 
-          <div className="relative space-y-24">
+          <div className="relative space-y-16">
+            <>{/* Nomination Period */}</>
             <TimelineItem
-              date="May 1-10, 2023"
-              title="Nomination Period"
-              description="Candidates submit their applications and platforms for review."
+              date="۱ تا ۱۰ اردیبهشت ۱۴۰۲"
+              title="دوره نامزدی"
+              description="نامزدها درخواست‌ها و برنامه‌های خود را برای بررسی ارسال می‌کنند."
               position="left"
-              icon="N"
+              icon={<FilePen className="size-5" />}
+              iconBgColor="bg-blue-500"
             />
+
+            {/* Campaign Period */}
             <TimelineItem
-              date="May 11-20, 2023"
-              title="Campaign Period"
-              description="Candidates present their platforms and engage with the student body."
+              date="۱۱ تا ۲۰ اردیبهشت ۱۴۰۲"
+              title="دوره تبلیغات"
+              description="نامزدها برنامه‌های خود را ارائه می‌دهند و با بدنه دانشجویی تعامل می‌کنند."
               position="right"
-              icon="C"
+              icon={<Calendar className="h-5 w-5" />}
+              iconBgColor="bg-blue-500"
             />
+
+            {/* Voting Period */}
             <TimelineItem
-              date="May 21, 2023"
-              title="Debate Day"
-              description="Candidates participate in public debates to discuss their visions and plans."
+              date="۲۲ تا ۲۶ اردیبهشت ۱۴۰۲"
+              title="دوره رأی‌گیری"
+              description="دانشجویان از طریق پورتال آنلاین به نامزدهای مورد نظر خود رأی می‌دهند."
               position="left"
-              icon="D"
+              icon={<Vote className="h-5 w-5" />}
+              iconBgColor="bg-red-500"
+              highlight={true}
             />
+
+            {/* Results Announcement */}
             <TimelineItem
-              date="May 22-26, 2023"
-              title="Voting Period"
-              description="Students cast their votes for their preferred candidates through the online portal."
+              date="۲۸ اردیبهشت ۱۴۰۲"
+              title="اعلام نتایج"
+              description="نتایج رسمی انتخابات اعلام و منتشر می‌شود."
               position="right"
-              icon="V"
-              highlight
+              icon={<Award className="h-5 w-5" />}
+              iconBgColor="bg-blue-500"
             />
-            <TimelineItem
-              date="May 28, 2023"
-              title="Results Announcement"
-              description="Official election results are announced and published."
-              position="left"
-              icon="R"
+          </div>
+        </div>
+
+        {/* Mobile Timeline (visible only on mobile) */}
+        <div className="relative mx-auto md:hidden">
+          {/* Timeline Line */}
+          <div className="absolute right-4 h-full w-1 bg-blue-200"></div>
+
+          <div className="relative space-y-8">
+            <MobileTimelineItem
+              date="۱ تا ۱۰ اردیبهشت ۱۴۰۲"
+              title="دوره نامزدی"
+              description="نامزدها درخواست‌ها و برنامه‌های خود را برای بررسی ارسال می‌کنند."
+              icon={<FilePen className="size-5" />}
+              iconBgColor="bg-blue-500"
+            />
+
+            <MobileTimelineItem
+              date="۱۱ تا ۲۰ اردیبهشت ۱۴۰۲"
+              title="دوره تبلیغات"
+              description="نامزدها برنامه‌های خود را ارائه می‌دهند و با بدنه دانشجویی تعامل می‌کنند."
+              icon={<Calendar className="h-5 w-5" />}
+              iconBgColor="bg-blue-500"
+            />
+
+            <MobileTimelineItem
+              date="۲۲ تا ۲۶ اردیبهشت ۱۴۰۲"
+              title="دوره رأی‌گیری"
+              description="دانشجویان از طریق پورتال آنلاین به نامزدهای مورد نظر خود رأی می‌دهند."
+              icon={<Vote className="h-5 w-5" />}
+              iconBgColor="bg-red-500"
+              highlight={true}
+            />
+
+            <MobileTimelineItem
+              date="۲۸ اردیبهشت ۱۴۰۲"
+              title="اعلام نتایج"
+              description="نتایج رسمی انتخابات اعلام و منتشر می‌شود."
+              icon={<Award className="h-5 w-5" />}
+              iconBgColor="bg-blue-500"
             />
           </div>
         </div>
@@ -57,7 +109,18 @@ const Timeline = () => {
     </section>
   );
 };
+
 export default Timeline;
+
+interface TimelineItemProps {
+  date: string;
+  title: string;
+  description: string;
+  position: "left" | "right";
+  icon: React.ReactNode;
+  iconBgColor: string;
+  highlight?: boolean;
+}
 
 const TimelineItem = ({
   date,
@@ -65,42 +128,97 @@ const TimelineItem = ({
   description,
   position,
   icon,
+  iconBgColor,
   highlight = false,
-}: {
-  date: string;
-  title: string;
-  description: string;
-  position: "left" | "right";
-  icon: string;
-  highlight?: boolean;
-}) => {
+}: TimelineItemProps) => {
   return (
     <div
       className={`flex items-center ${position === "left" ? "flex-row-reverse" : "flex-row"}`}
     >
       <div
-        className={`w-5/12 ${position === "left" ? "pr-8 text-right" : "pl-8 text-left"}`}
+        className={`w-5/12 ${position === "left" ? "pl-8 text-right" : "pr-8 text-left"}`}
       >
         <div
-          className={`rounded-lg p-4 shadow-sm ${highlight ? "border border-red-200 bg-red-50" : "bg-white"}`}
+          className={`rounded-lg border p-6 shadow-sm ${
+            highlight ? "border-red-200 bg-white" : "border-gray-100 bg-white"
+          }`}
         >
-          <p
-            className={`mb-1 text-sm font-medium ${highlight ? "text-red-600" : "text-gray-500"}`}
+          <h3
+            className={`mb-2 text-xl font-bold ${highlight ? "text-rose-500" : "text-blue-700"}`}
+          >
+            {title}
+          </h3>
+          <p className="mb-3 text-gray-600">{description}</p>
+          <Badge
+            variant={"outline"}
+            className={`rounded-full ${highlight ? "bg-destructive border-0 text-white" : "border-0 bg-gray-200"}`}
           >
             {date}
-          </p>
-          <h3 className="mb-2 text-lg font-bold">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          </Badge>
         </div>
       </div>
       <div className="flex w-2/12 justify-center">
         <div
-          className={`z-10 flex h-10 w-10 items-center justify-center rounded-full ${highlight ? "bg-red-500" : "bg-blue-500"} font-bold text-white`}
+          className={`z-10 flex h-10 w-10 items-center justify-center rounded-full ${
+            highlight ? "bg-red-500" : iconBgColor
+          } text-white`}
         >
           {icon}
         </div>
       </div>
       <div className="w-5/12"></div>
+    </div>
+  );
+};
+
+interface MobileTimelineItemProps {
+  date: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  iconBgColor: string;
+  highlight?: boolean;
+}
+
+const MobileTimelineItem = ({
+  date,
+  title,
+  description,
+  icon,
+  iconBgColor,
+  highlight = false,
+}: MobileTimelineItemProps) => {
+  return (
+    <div className="flex">
+      <div className="relative ml-4 flex-shrink-0">
+        <div
+          className={`z-10 flex h-10 w-10 items-center justify-center rounded-full ${
+            highlight ? "bg-red-500" : iconBgColor
+          } text-white`}
+        >
+          {icon}
+        </div>
+      </div>
+      <div className="flex-grow">
+        <div
+          className={`rounded-lg border p-4 shadow-sm ${
+            highlight ? "border-red-200 bg-white" : "border-gray-100 bg-white"
+          }`}
+        >
+          <h3
+            className={`mb-2 text-lg font-bold ${highlight ? "text-rose-500" : "text-blue-700"}`}
+          >
+            {title}
+          </h3>
+          <p className="mb-3 text-sm text-gray-600">{description}</p>
+          <Badge
+            variant={"outline"}
+            className={`rounded-full ${highlight ? "bg-destructive border-0 text-white" : "border-0 bg-gray-200"}`}
+          >
+            {date}
+          </Badge>
+        </div>
+      </div>
     </div>
   );
 };
