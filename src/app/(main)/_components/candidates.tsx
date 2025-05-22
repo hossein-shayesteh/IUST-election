@@ -50,7 +50,7 @@ const Candidates = () => {
             <Button
               key={faculty}
               variant="outline"
-              className={`rounded-full hover:bg-gray-50 ${selectedDepartment === faculty ? "border-blue-600 bg-blue-600 text-white hover:bg-blue-600 hover:text-white" : undefined}`}
+              className={`cursor-pointer rounded-full hover:bg-gray-50 ${selectedDepartment === faculty ? "border-blue-600 bg-blue-600 text-white hover:bg-blue-600 hover:text-white" : undefined}`}
               onClick={() => setSelectedDepartment(faculty)}
             >
               {faculty}

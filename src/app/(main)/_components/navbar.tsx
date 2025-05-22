@@ -35,7 +35,7 @@ const Navbar = ({ setOpenMobileSidebar }: NavbarProps) => {
     <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container mx-auto flex h-16 items-center justify-start px-4 md:justify-between md:px-6">
         <Button
-          variant="outline"
+          variant="ghost"
           size="icon"
           className="ml-4 md:hidden"
           onClick={() => setOpenMobileSidebar(true)}
